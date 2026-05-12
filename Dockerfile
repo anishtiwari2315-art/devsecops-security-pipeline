@@ -3,9 +3,9 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copy package files and install deps
+# Copy package files and install production deps
 COPY app/package*.json ./
-RUN npm ci --only=production
+RUN npm install --only=production
 
 # ---- Production Stage ----
 FROM node:20-alpine
