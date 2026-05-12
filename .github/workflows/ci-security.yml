@@ -113,7 +113,7 @@ jobs:
           category: trivy-image
 
   # -----------------------------------------------
-  # JOB 4: CodeQL SAST Scan
+  # JOB 4: CodeQL SAST Scan (upgraded to v4)
   # -----------------------------------------------
   sast-scan:
     name: CodeQL SAST Scan
@@ -128,7 +128,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ]
+        language: [ 'javascript-typescript' ]
 
     steps:
       - name: Checkout code
