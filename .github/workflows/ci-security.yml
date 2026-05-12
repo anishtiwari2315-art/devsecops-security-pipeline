@@ -65,7 +65,7 @@ jobs:
         continue-on-error: true
 
       - name: Trivy filesystem scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@v0.35.0
         with:
           scan-type: 'fs'
           scan-ref: '.'
@@ -97,7 +97,7 @@ jobs:
         run: docker build -t devsecops-app:${{ github.sha }} .
 
       - name: Trivy image scan
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@v0.35.0
         with:
           image-ref: 'devsecops-app:${{ github.sha }}'
           vuln-type: 'os,library'
